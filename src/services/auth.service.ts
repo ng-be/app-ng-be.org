@@ -1,11 +1,11 @@
 // 3d party imports
-import {Injectable} from '@angular/core';
-import {AngularFire, FirebaseAuthState} from 'angularfire2/angularfire2';
-import {Observable, Subject} from 'rxjs/Rx';
+import { Injectable } from '@angular/core';
+import { AngularFire, FirebaseAuthState } from 'angularfire2/angularfire2';
+import { Observable, Subject } from 'rxjs/Rx';
 
 // app imports
-import {Credentials} from '../entities/credentials.entity';
-import {Account} from '../entities/account.entity';
+import { Credentials } from '../entities/credentials.entity';
+import { Account } from '../entities/account.entity';
 
 @Injectable()
 export class AuthService {

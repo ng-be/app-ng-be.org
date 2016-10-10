@@ -10,7 +10,8 @@ export class ConferenceDataService {
   data: any;
 
   constructor(private http: Http,
-              private user: UserDataService) {}
+              private user: UserDataService) {
+  }
 
   load() {
     if (this.data) {

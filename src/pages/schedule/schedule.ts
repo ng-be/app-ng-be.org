@@ -1,5 +1,5 @@
 // 3d party imports
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, AfterViewInit } from '@angular/core';
 import { AlertController, App, ItemSliding, List, ModalController, NavController } from 'ionic-angular';
 
 // app imports
@@ -10,7 +10,7 @@ import { ScheduleFilterPage, SessionDetailPage } from '../';
   selector: 'page-schedule',
   templateUrl: 'schedule.html'
 })
-export class SchedulePage {
+export class SchedulePage implements AfterViewInit {
 
   // the list is a child of the schedule page
   // @ViewChild('scheduleList') gets a reference to the list

@@ -1,5 +1,5 @@
 // 3d party imports
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 // app imports
@@ -10,12 +10,12 @@ import { UserDataService } from '../../services';
   selector: 'page-account',
   templateUrl: 'account.html',
 })
-export class AccountPage {
+export class AccountPage implements AfterViewInit {
 
   username: string;
 
-  constructor(public nav: NavController,
-              public userData: UserDataService) {
+  constructor(private nav: NavController,
+              private userData: UserDataService) {
 
   }
 
