@@ -8,13 +8,16 @@ tag-list {
       padding: 2px 4px 4px 4px;
       font-size: 0.8em;
       color: #fff;
-      margin: {
-        right: 5px;
-        bottom: 5px;
-      }
+      margin-right: 5px;
       &:last-child {
         margin-right: 0;
       }
+    }
+  }
+
+  @each $tag, $value in auxiliary-categories() {
+    .tag[tag=#{$tag}] {
+      background: $value;
     }
   }
 }

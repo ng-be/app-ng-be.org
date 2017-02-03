@@ -1,0 +1,13 @@
+<p>
+  <button ion-button icon-left small color="favorite" (click)="favorite.emit()">
+    <ion-icon name='bookmark'></ion-icon>
+    <span *ngIf="!session.favorite">Favorite session</span>
+    <span *ngIf="session.favorite">Defavorite session</span>
+  </button>
+
+  <button ion-button icon-left small color="favorite" (click)="rate.emit()">
+    <ion-icon name='star-half'></ion-icon>
+    <span *ngIf="!session.rating">Rate session</span>
+    <span *ngIf="session.rating">Change rating</span>
+  </button>
+</p>

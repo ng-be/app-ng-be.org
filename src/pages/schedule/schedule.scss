@@ -1,20 +1,12 @@
 page-schedule {
-
   .dologin{
     width: calc(100% - 32px);
   }
 
   @each $tag, $value in auxiliary-categories() {
-
     ion-item-sliding[tag=#{$tag}] ion-label {
       border-left: 5px solid $value;
       padding-left: 10px;
     }
-
-    .tag[tag=#{$tag}] {
-      background: $value;
-    }
-
   }
-
 }

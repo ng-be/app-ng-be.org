@@ -1,0 +1,9 @@
+<button ion-item (click)="select.emit()">
+  <ion-avatar item-left>
+    <img [src]="speaker.avatar" [alt]="speaker.firstname + ' ' + speaker.name">
+  </ion-avatar>
+  <h2>{{speaker.firstname}} {{speaker.name}}</h2>
+  <p>
+    {{speaker.description.substr(0, 50)}}...
+  </p>
+</button>

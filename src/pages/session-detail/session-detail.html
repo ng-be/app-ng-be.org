@@ -1,55 +1,23 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Session</ion-title>
-    <ion-buttons end>
-      <button ion-button (click)="toggleFavorite()">
-        <ion-icon name="bookmark" [color]="session.favorite ? 'secondary' : ''"></ion-icon>
-      </button>
-      <button ion-button (click)="openRatingModal()">
-        <ion-icon name="star-half" [color]="session.rating ? 'secondary' : ''"></ion-icon>
-      </button>
-    </ion-buttons>
-  </ion-navbar>
+  <session-navbar
+    [session]="session"
+    (favorite)="toggleFavorite()"
+    (rate)="openRatingModal()">
+  </session-navbar>
 </ion-header>
-<ion-content padding>
 
+<ion-content padding>
   <h1>{{session.title}}</h1>
 
-  <table>
-    <tr>
-      <th>Slot:</th>
-      <td>{{session.startDate.format('HH:mm')}} - {{session.endDate.format('HH:mm')}}</td>
-    </tr>
-    <tr>
-      <th>Room:</th>
-      <td>{{session.room.name}}</td>
-    </tr>
-    <tr>
-      <th>Tags:</th>
-      <td>
-        <ul>
-        <li *ngFor="let tag of session.tags" [attr.tag]="tag" class="tag">
-          {{tag}}
-        </li>
-      </ul>
-      </td>
-    </tr>
-  </table>
+  <session-info
+    [session]="session">
+  </session-info>
 
-  <p>
-
-    <button ion-button icon-left small color="favorite" (click)="toggleFavorite()">
-      <ion-icon name='bookmark'></ion-icon>
-      <span *ngIf="!session.favorite">Favorite session</span>
-      <span *ngIf="session.favorite">Defavorite session</span>
-    </button>
-
-    <button ion-button icon-left small color="favorite" (click)="openRatingModal()">
-      <ion-icon name='star-half'></ion-icon>
-      <span *ngIf="!session.rating">Rate session</span>
-      <span *ngIf="session.rating">Change rating</span>
-    </button>
-  </p>
+  <session-actions
+    [session]="session"
+    (favorite)="toggleFavorite()"
+    (rate)="openRatingModal()">
+  </session-actions>
 
   <h3>Description:</h3>
   <div [innerHtml]="session.description"></div>
@@ -57,18 +25,9 @@
   <div *ngIf="session.speakers.length">
     <h3>Speakers:</h3>
 
-    <ion-list no-padding>
-      <button ion-item *ngFor="let speaker of session.speakers" (click)="goToSpeakerDetail(speaker)">
-        <ion-avatar item-left>
-          <img [src]="speaker.avatar" [alt]="speaker.firstname + ' ' + speaker.name">
-        </ion-avatar>
-        <h2>{{speaker.firstname}} {{speaker.name}}</h2>
-        <p>
-          {{speaker.description.substr(0, 50)}}...
-        </p>
-      </button>
-    </ion-list>
-
+    <session-speaker-list
+      [speakers]="session.speakers"
+      (select)="goToSpeakerDetail($event)">
+    </session-speaker-list>
   </div>
-
 </ion-content>

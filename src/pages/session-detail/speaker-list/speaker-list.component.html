@@ -1,0 +1,8 @@
+<ion-list no-padding>
+  <session-speaker-item
+    *ngFor="let speaker of speakers"
+    [speaker]="speaker"
+    (select)="select.emit(speaker)"
+    class="item-block">
+  </session-speaker-item>
+</ion-list>

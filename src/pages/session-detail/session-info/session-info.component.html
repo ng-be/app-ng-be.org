@@ -1,0 +1,16 @@
+<table>
+  <tr>
+    <th>Slot:</th>
+    <td>{{session.startDate.format('HH:mm')}} - {{session.endDate.format('HH:mm')}}</td>
+  </tr>
+  <tr>
+    <th>Room:</th>
+    <td>{{session.room.name}}</td>
+  </tr>
+  <tr>
+    <th>Tags:</th>
+    <td>
+      <tag-list [tags]="session.tags"></tag-list>
+    </td>
+  </tr>
+</table>

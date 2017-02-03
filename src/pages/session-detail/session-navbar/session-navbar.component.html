@@ -1,0 +1,12 @@
+<ion-navbar>
+  <ion-title>Session</ion-title>
+
+  <ion-buttons end>
+    <button ion-button (click)="favorite.emit()">
+      <ion-icon name="bookmark" [color]="session.favorite ? 'secondary' : ''"></ion-icon>
+    </button>
+    <button ion-button (click)="rate.emit()">
+      <ion-icon name="star-half" [color]="session.rating ? 'secondary' : ''"></ion-icon>
+    </button>
+  </ion-buttons>
+</ion-navbar>

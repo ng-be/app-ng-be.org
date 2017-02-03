@@ -12,6 +12,8 @@ import { firebaseConfig, firebaseAuthConfig } from './app.firebase';
 
 import { AcStar, AcStars } from '../pages/rate-session/components'
 
+import { SharedModule } from '../shared/shared.module';
+
 const APP_COMPONENTS = [
   AcStar,
   AcStars
@@ -26,6 +28,7 @@ const APP_COMPONENTS = [
   imports: [
     IonicModule.forRoot(ConferenceApp),
     AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig),
+    SharedModule.forRoot(),
     ...APP_PAGE_MODULES
   ],
   bootstrap: [IonicApp],
